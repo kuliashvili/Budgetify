@@ -24,13 +24,14 @@ function Login() {
             <h1 className="login-header">Budgetify</h1>
           </div>
           <div className="login-down">
-            <form className="login-form">
+            <div className="login-form">
               <input
                 placeholder="Email"
                 name="email"
                 label="Email"
                 required
               ></input>
+              <div className="password-input-container" >
               <input
                 id="input-password"
                 placeholder="Password"
@@ -39,13 +40,16 @@ function Login() {
                 type="password"
                 required
               ></input>
+              <button onClick={showPassword} className="eye-button">
+              <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
+            </button>
+              </div>
+              
               <button className="login-button" title="Submit" type="submit">
                 Login
               </button>
-            </form>
-            <button onClick={showPassword} className="eye-button">
-              <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
-            </button>
+            </div>
+            
           </div>
         </div>
       </div>

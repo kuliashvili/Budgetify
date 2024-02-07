@@ -19,7 +19,7 @@
 }
 .login-inner{
     width: 360px;
-    height: 300px;
+    height: 340px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 200px;
+    height: 230px;
     
 }
 input{
@@ -68,7 +68,18 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: -45px;
+    left: 300px;
+    background: none;
+    border: none;
+}
+.eye-button:hover{
+    cursor: pointer;
 }
 .eye-icon{
     width: 30px;
+}
+.password-input-container{
+    height: 57px;
 }
