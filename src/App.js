@@ -1,9 +1,10 @@
-import './index.css'
+import "./index.css";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
     <div className="App">
-      <p className="text">ddddd</p>
+      <Login />
     </div>
   );
 }
