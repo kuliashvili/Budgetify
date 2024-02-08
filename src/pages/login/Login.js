@@ -1,6 +1,7 @@
 import "./Login.css";
 import eyeIcon from "../../assets/eye.png";
 import React, { useState } from "react";
+import {Link, Navigate} from "react-router-dom"
 
 function Login() {
   let [counter, setCounter] = useState(0);
@@ -16,7 +17,10 @@ function Login() {
     }
   }
 
+ 
+
   return (
+    
     <div className="Login">
       <div className="login-container">
         <div className="login-inner">
@@ -31,25 +35,24 @@ function Login() {
                 label="Email"
                 required
               ></input>
-              <div className="password-input-container" >
-              <input
-                id="input-password"
-                placeholder="Password"
-                name="password"
-                label="Password"
-                type="password"
-                required
-              ></input>
-              <button onClick={showPassword} className="eye-button">
-              <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
-            </button>
+              <div className="password-input-container">
+                <input
+                  id="input-password"
+                  placeholder="Password"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  required
+                ></input>
+                <button onClick={showPassword} className="eye-button">
+                  <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
+                </button>
               </div>
-              
-              <button className="login-button" title="Submit" type="submit">
+
+              <button className="login-button" title="Submit" type="submit" onClick={() => window.location.href = '/main'} >
                 Login
               </button>
             </div>
-            
           </div>
         </div>
       </div>

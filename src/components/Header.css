@@ -1,0 +1,28 @@
+.Header{
+    width: 600px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    font-size: 20px;
+    font-weight: 400px;
+    list-style: none;
+}
+.nav-link{
+    text-decoration: none;
+    color: #373737;
+}
+
+.nav-link:hover{
+    padding-bottom: 3px;
+    border-bottom: 2px solid black;
+    
+
+}
