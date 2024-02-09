@@ -1,0 +1,47 @@
+.Cards{
+    color: white;
+    height: 400px;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    width: 430px;
+    height: 185px;
+    border-radius:8px;
+    background-image: url("../../assets/cardBackground.png");
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-right{
+height: 150px;
+display: flex;
+justify-content: center;
+align-items: start;
+}
+.card-icon{
+    margin: 0px 15px 0 0 ;
+}
+.card-left{
+    margin-left: 25px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.card-header{
+    font-size: 32px;
+    font-weight: 400px;
+    line-height: 40px;
+}
+.card-money{
+    font-size: 45px;
+    font-weight: 400px;
+    line-height: 53px;
+}

@@ -82,3 +82,9 @@ input{
 .password-input-container{
     height: 57px;
 }
+
+
+input:focus::-webkit-input-placeholder {
+    transform: translateY(-8px);
+    
+}
