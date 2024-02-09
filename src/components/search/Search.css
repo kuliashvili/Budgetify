@@ -5,4 +5,19 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.search-inner{
+    margin-left: 20px;
+    display: flex;
+    width: 89px;
+    justify-content: space-between;
+}
+.search-text{
+    font-size: 18px;
+    line-height: 22px;
+    color: #474747;
+    outline: none;
+    border: none;
 }

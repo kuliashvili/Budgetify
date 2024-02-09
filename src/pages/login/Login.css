@@ -83,8 +83,12 @@ input{
     height: 57px;
 }
 
+input{
+    outline: none;
+}
 
 input:focus::-webkit-input-placeholder {
     transform: translateY(-8px);
+    
     
 }
