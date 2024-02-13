@@ -2,9 +2,37 @@ import "./Login.css";
 import eyeIcon from "../../assets/eye.png";
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 function Login() {
-  let [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      const users = await response.json();
+      const user = users.find(
+        (user) => user.email === email && user.address.zipcode === password
+      );
+
+      if (user) {
+        setLoggedIn(true);
+        alert("good job" + user.name +  loggedIn);
+        window.location.href = "/main"
+       
+      } else {
+        alert("login or password is wrong, please try again");
+      }
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      alert("An error occurred while logging in");
+    }
+  };
 
   function showPassword() {
     setCounter(counter + 1);
@@ -31,6 +59,7 @@ function Login() {
                 name="email"
                 label="Email"
                 required
+                onChange={(e) => setEmail(e.target.value)}
               ></input>
               <div className="password-input-container">
                 <input
@@ -39,6 +68,7 @@ function Login() {
                   name="password"
                   label="Password"
                   type="password"
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                 ></input>
                 <button onClick={showPassword} className="eye-button">
@@ -50,7 +80,7 @@ function Login() {
                 className="login-button"
                 title="Submit"
                 type="submit"
-                onClick={() => (window.location.href = "/main")}
+                onClick={handleLogin}
               >
                 Login
               </button>
