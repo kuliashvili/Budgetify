@@ -1,9 +1,13 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
+import person from "../../assets/person.svg"
 
 function Header() {
   return (
     <div className="Header">
+      <div className="header-logo" >
+        <p className="header-logo-text">Budgetify</p>
+      </div>
       <ul className="header-nav">
         <li className="nav-item">
           <Link className="nav-link" to="/categories">Categories</Link>
@@ -21,6 +25,10 @@ function Header() {
           <Link className="nav-link" to="/admin">Admin</Link>
         </li>
       </ul>
+      <div className="header-person" >
+        <img className="person-icon" src={person}></img>
+        <p className="person-name" >Maksim Verenich</p>
+      </div>
     </div>
   );
 }
