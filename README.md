@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Budgetify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Budgetify is a React project developed as part of the Exadel React course. It aims to provide users with a simple and intuitive way to manage their budgets. This README serves as a guide to understand the project structure, installation process, and how to contribute.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+Budgetify is built using React, providing a modern and responsive user interface for managing budgets. The project is structured to maintain clean and organized code, making it easy for developers to understand and extend its functionality.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To get started with Budgetify, follow these steps:
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/kuliashvili/Budgetify.git
+   ```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd Budgetify
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Once you have installed the project, you can run it locally by executing:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will start the development server and open Budgetify in your default web browser. You can then begin using the application to manage your budgets.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
 
-## Learn More
+Thank you for considering contributing to Budgetify! To contribute, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the repository.
+2. Create a new branch from the `feature/project-initialization` branch for your changes:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-### Code Splitting
+3. Make your changes and commit them:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   git commit -m "Add your commit message here"
+   ```
 
-### Analyzing the Bundle Size
+4. Push your changes to your fork:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-### Making a Progressive Web App
+5. Finally, open a pull request against the `feature/project-initialization` branch.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Your contribution will be reviewed, and once approved, it will be merged into the main project.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note:** This project is developed as part of the Exadel React course and will be actively maintained for the next two months. If you encounter any issues or have suggestions for improvements, feel free to open an issue or contribute!
