@@ -1,0 +1,48 @@
+.Information{
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 590px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.info-inner{
+    margin-top: 30px;
+    width: 520px;
+    height: 600px;
+    background-color: rgb(211, 206, 206);
+}
+.info-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.info-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+}
+.info-button{
+    cursor: pointer;
+    background: none;
+    color: red;
+    border: none;
+}
+.info-img{
+    transition: transform 0.3s ease;
+}
+.info-img:hover{
+    transform: scale(0.9);
+}
+
+.info-text{
+    font-size: 32px;
+    line-height: 40px;
+    color: #373737;
+}

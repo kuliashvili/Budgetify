@@ -5,6 +5,7 @@ import Transaction from "../..//components/transaction/Transaction";
 import Search from "../../components/search/Search";
 import Ubuttons from "../../components/ubuttons/Ubuttons";
 import Dbuttons from "../../components/dbuttons/Dbuttons";
+import Information from "../../components/information/Information";
 
 function Main() {
   return (
@@ -21,6 +22,7 @@ function Main() {
           <Transaction />
           <Transaction />
           <Transaction />
+          <Information />
         </div>
         <div className="main-right">
             <Ubuttons/>

@@ -1,6 +1,6 @@
 import "./Cards.css"
-import usd from "../../assets/usd.png"
-import euro from "../../assets/euro.png"
+import usd from "../../assets/usd.svg"
+import euro from "../../assets/euro.svg"
 
 function Cards(){
 
