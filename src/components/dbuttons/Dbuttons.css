@@ -1,0 +1,88 @@
+.Dbuttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 225px;
+}
+
+.dbutton {
+  width: 240px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #b9e2e6;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.dbutton1 {
+  width: 240px;
+  height: 70px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fecee2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dbutton1-inner{
+    margin-right: 10px;
+    margin-bottom: 5px;
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+}
+.dbutton1-up{
+    width: 165px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dbuttons-image {
+  margin-left: 10px;
+}
+.dbuttons-image1 {
+}
+
+.dbuttons-text {
+  margin-left: 10px;
+  font-size: 20px;
+  line-height: 25px;
+  color: #373737;
+}
+.dbuttons-text2 {
+  font-size: 20px;
+  line-height: 25px;
+  color: #373737;
+  text-align: start;
+}
+.dbuttons-text1 {
+  font-size: 13px;
+  line-height: 16px;
+  color: #373737;
+}
+
+/* progressbarr */
+
+.progress {
+  position: relative;
+  width: 165px;
+  height: 6px;
+}
+.progress-background {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+}
+.progress-fill {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff76ae;
+  height: 100%;
+  border-radius: 8px;
+}

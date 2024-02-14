@@ -1,11 +1,11 @@
 .Search{
+    margin-bottom: 30px;
     width: 620px;
     height: 60px;
     background-color: white;
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-top: 20px;
     border-radius: 8px;
 }
 .search-inner{
