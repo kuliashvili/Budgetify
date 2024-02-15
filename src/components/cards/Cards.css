@@ -45,3 +45,6 @@ align-items: start;
     font-weight: 400px;
     line-height: 53px;
 }
+.card-credit{
+    opacity: 0.4;
+}
