@@ -60,6 +60,12 @@ input{
     font-size: 18px;
     text-indent: 10px;
     border: none;
+    cursor: pointer;
+    transition: 0.2s ease; 
+    
+}
+.login-button:hover{
+    background-color: #9ad0d4;
 }
 .eye-button{
     width: 50px;

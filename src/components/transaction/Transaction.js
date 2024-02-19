@@ -6,10 +6,9 @@ function Transaction() {
     let info = document.getElementById("Information");
     info.style.display = "flex";
 
-   
-  let overlay = document.createElement("div");
-  overlay.classList.add("overlay");
-  document.body.appendChild(overlay);
+    let overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    document.body.appendChild(overlay);
   }
 
   return (

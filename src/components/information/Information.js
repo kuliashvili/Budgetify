@@ -3,18 +3,18 @@ import pen from "../../assets/pen.svg";
 import trash from "../../assets/trash.svg";
 import close from "../../assets/close.svg";
 import up from "../../assets/up.svg";
-import whitedown from "../../assets/whitedown.svg"
-import image from "../../assets/image.svg"
+import whitedown from "../../assets/whitedown.svg";
+import image from "../../assets/image.svg";
 
 function Information() {
   function closeInfo() {
     let info = document.getElementById("Information");
     info.style.display = "none";
 
-  let overlay = document.querySelector(".overlay");
-  if (overlay) {
-    overlay.parentNode.removeChild(overlay);
-  }
+    let overlay = document.querySelector(".overlay");
+    if (overlay) {
+      overlay.parentNode.removeChild(overlay);
+    }
   }
 
   return (
@@ -52,57 +52,62 @@ function Information() {
           </div>
         </div>
 
-        <div className="info-details" >
-            <div className="info-field" >
-                <p className="field-left" >Payment Date:</p>
-                <div className="field-right" >
-                    <p className="field-right-text" > 28.02.2022</p>
-                </div>
+        <div className="info-details">
+          <div className="info-field">
+            <p className="field-left">Payment Date:</p>
+            <div className="field-right">
+              <p className="field-right-text"> 28.02.2022</p>
             </div>
-            <div className="line" ></div>
-            <div className="info-field" >
-                <p className="field-left" >Payee:</p>
-                <div className="field-right" >
-                    <p className="field-right-text" > John Smith</p>
-                </div>
+          </div>
+          <div className="line"></div>
+          <div className="info-field">
+            <p className="field-left">Payee:</p>
+            <div className="field-right">
+              <p className="field-right-text"> John Smith</p>
             </div>
-            <div className="line" ></div>
-            <div className="info-field" >
-                <p className="field-left" >Description:</p>
-                <div className="field-right" >
-                    <p className="field-right-text" >Payment for flat in Samrocka street 25. Don’t forget to send a receipt.</p>
-                </div>
+          </div>
+          <div className="line"></div>
+          <div className="info-field">
+            <p className="field-left">Description:</p>
+            <div className="field-right">
+              <p className="field-right-text">
+                Payment for flat in Samrocka street 25. Don’t forget to send a
+                receipt.
+              </p>
             </div>
+          </div>
         </div>
 
-        <div className="info-images" >
-            <div className="images-field" >
-                <div className="images-left" >
-                    <img className="images-img" src={image} ></img>
-                    <p className="images-text" >Receipt for March flat rent</p>
-                </div>
-                <div className="images-right" >
-                    <button className="images-button" >
-                        <img className="images-utton-img"  src={whitedown} ></img>Download
-                    </button>
-                </div>
+        <div className="info-images">
+          <div className="images-field">
+            <div className="images-left">
+              <img className="images-img" src={image}></img>
+              <p className="images-text">Receipt for March flat rent</p>
             </div>
+            <div className="images-right">
+              <button className="images-button">
+                <img className="images-utton-img" src={whitedown}></img>Download
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="info-images" >
-            <div className="images-field" >
-                <div className="images-left" >
-                    <img className="images-img" src={image} ></img>
-                    <p className="images-text" >Receipt for March flat rent</p>
-                </div>
-                <div className="images-right" >
-                    <button className="images-button" >
-                        <img className="images-utton-img"  src={whitedown} ></img>Download
-                    </button>
-                </div>
+        <div className="info-images">
+          <div className="images-field">
+            <div className="images-left">
+              <img className="images-img" src={image}></img>
+              <p className="images-text">Receipt for March flat rent</p>
             </div>
+            <div className="images-right">
+              <button className="images-button">
+                <img className="images-utton-img" src={whitedown}></img>Download
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <button className="info-close" onClick={closeInfo} >close</button>
+      <button className="info-close" onClick={closeInfo}>
+        close
+      </button>
     </div>
   );
 }

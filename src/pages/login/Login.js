@@ -2,7 +2,6 @@ import "./Login.css";
 import eyeIcon from "../../assets/eye.png";
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 function Login() {
   const [counter, setCounter] = useState(0);
@@ -12,19 +11,16 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
+      const response = await fetch("http://localhost:3001/api/users");
       const users = await response.json();
       const user = users.find(
-        (user) => user.email === email && user.address.zipcode === password
+        (user) => user.email === email && user.password === password
       );
 
       if (user) {
         setLoggedIn(true);
-        alert("good job" + user.name +  loggedIn);
-        window.location.href = "/main"
-       
+        alert("hello " + user.name + ", enjoy ");
+        // window.location.href = "/main";
       } else {
         alert("login or password is wrong, please try again");
       }
@@ -46,48 +42,53 @@ function Login() {
   }
 
   return (
+
     <div className="Login">
-      <div className="login-container">
-        <div className="login-inner">
-          <div className="login-up">
-            <h1 className="login-header">Budgetify</h1>
-          </div>
-          <div className="login-down">
-            <div className="login-form">
-              <input
-                placeholder="Email"
-                name="email"
-                label="Email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-              <div className="password-input-container">
+      {loggedIn ? (
+        <Navigate to="/main" />
+      ) : (
+        <div className="login-container">
+          <div className="login-inner">
+            <div className="login-up">
+              <h1 className="login-header">Budgetify</h1>
+            </div>
+            <div className="login-down">
+              <div className="login-form">
                 <input
-                  id="input-password"
-                  placeholder="Password"
-                  name="password"
-                  label="Password"
-                  type="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Email"
+                  name="email"
+                  label="Email"
                   required
+                  onChange={(e) => setEmail(e.target.value)}
                 ></input>
-                <button onClick={showPassword} className="eye-button">
-                  <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
+                <div className="password-input-container">
+                  <input
+                    id="input-password"
+                    placeholder="Password"
+                    name="password"
+                    label="Password"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  ></input>
+                  <button onClick={showPassword} className="eye-button">
+                    <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
+                  </button>
+                </div>
+
+                <button
+                  className="login-button"
+                  title="Submit"
+                  type="submit"
+                  onClick={handleLogin}
+                >
+                  Login
                 </button>
               </div>
-
-              <button
-                className="login-button"
-                title="Submit"
-                type="submit"
-                onClick={handleLogin}
-              >
-                Login
-              </button>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
