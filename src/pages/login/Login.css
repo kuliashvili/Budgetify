@@ -87,6 +87,17 @@ input{
 }
 .password-input-container{
     height: 57px;
+    /* display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    align-items: center; */
+}
+.password-input-container1{
+    height: 67px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    align-items: center;
 }
 
 input{
@@ -97,4 +108,33 @@ input:focus::-webkit-input-placeholder {
     transform: translateY(-8px);
     
     
+}
+.error{
+    border: 1.5px solid red;
+}
+.error-message{
+    width: 100%;
+    margin: -40px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: red;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+}
+.error-field{
+    background-color: #f8d7d7;
+    width: 350px;
+    height: 45px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+.error-field-text{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
 }
