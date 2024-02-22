@@ -1,5 +1,7 @@
 import "./Transaction.css";
 import up from "../../assets/up.svg";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Transaction() {
   function showInfo() {
@@ -11,8 +13,35 @@ function Transaction() {
     document.body.appendChild(overlay);
   }
 
+  const [transactions, setTransactions] = useState([]);
+
+  const fetchTransactions = async () => {
+
+
+    try{
+        const response = await fetch("http://localhost:3002/api/transactions")
+        if(response.ok){
+            const data = await response.json()
+            setTransactions(data)
+        }else{
+          console.error("failed to fetch transactions")
+        }
+    }
+    catch (error) {
+      console.error("Error fetching transactions: ", error)
+    }
+
+
+  } 
+
+
+  useEffect( () => {
+    fetchTransactions()
+  } )
+
   return (
     <div id="Transaction" onClick={showInfo} className="Transaction">
+      {/* <h1>{transactions}</h1> */}
       <div className="transaction-left">
         <p className="transaction-header">Home</p>
       </div>
