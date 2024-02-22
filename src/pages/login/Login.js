@@ -2,6 +2,7 @@ import "./Login.css";
 import eyeIcon from "../../assets/eye.png";
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import close from "../../assets/close.svg"
 
 function Login() {
   let error = document.getElementById("error-field");
@@ -22,10 +23,8 @@ function Login() {
 
       if (user) {
         setLoggedIn(true);
-        alert("hello " + user.name + ", enjoy ");
         // window.location.href = "/main";
       } else {
-        // alert("login or password is wrong, please try again");
         error.style.display = "flex"
       }
     } catch (error) {
@@ -71,7 +70,9 @@ function Login() {
             <div className="login-down">
               <div id="error-field" className="error-field" >
                 <p className="error-field-text" >Incorrect email or password</p>
-                <button onClick={hideError} className="error-close" >aaa</button>
+                <button onClick={hideError} className="error-close" >
+                  <img className="error-close-img"  src={close} ></img>
+                </button>
               </div>
               <div className="login-form">
                 <input

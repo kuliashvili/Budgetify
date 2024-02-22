@@ -5,7 +5,7 @@ import Transaction from "../..//components/transaction/Transaction";
 import Search from "../../components/search/Search";
 import Ubuttons from "../../components/ubuttons/Ubuttons";
 import Dbuttons from "../../components/dbuttons/Dbuttons";
-import Information from "../../components/information/Information";
+import Information from "../../components/information/Transact-Information";
 
 function Main() {
   return (
