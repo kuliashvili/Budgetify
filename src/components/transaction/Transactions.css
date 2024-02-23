@@ -1,0 +1,92 @@
+.transactions {
+  display: flex;
+}
+
+.Transaction {
+  margin-bottom: 20px;
+  width: 620px;
+  height: 90px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.transaction-center {
+  margin-left: 25px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.transaction-left {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #eceded;
+}
+.transaction-header {
+  font-size: 20px;
+  font-weight: 900px;
+  color: #373737;
+}
+.both-left {
+  display: flex;
+}
+.transaction-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+.transaction-description-text {
+  margin-left: 5px;
+  min-width: 310px;
+  color: #373737;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.txt {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  color: #373737;
+
+}
+.transaction-right {
+  margin-right: 15px;
+
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 22px;
+  line-height: 28px;
+}
+.transaction-output {
+  color: red;
+}
+.transaction-output1 {
+  color: #21C206;
+  ;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #33333366;
+  z-index: 999;
+}
+
+#Information {
+  z-index: 1000;
+}

@@ -24,7 +24,7 @@ const transactionSchema = new mongoose.Schema({
   kind: String,
   header: String,
   isExpense: Boolean,
-  date: Date,
+  date: String,
   fullName: String,
   amount: Number,
 });

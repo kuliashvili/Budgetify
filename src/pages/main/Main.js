@@ -1,7 +1,7 @@
 import "./Main.css";
 import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards";
-import Transaction from "../..//components/transaction/Transaction";
+import Transaction from "../../components/transaction/Transactions";
 import Search from "../../components/search/Search";
 import Ubuttons from "../../components/ubuttons/Ubuttons";
 import Dbuttons from "../../components/dbuttons/Dbuttons";
@@ -18,11 +18,6 @@ function Main() {
         <div className="main-center">
           <Search />
           <Transaction />
-          <Transaction />
-          <Transaction />
-          <Transaction />
-          <Transaction />
-          <Information />
         </div>
         <div className="main-right">
             <Ubuttons/>
