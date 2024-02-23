@@ -15,7 +15,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/users");
+      const response = await fetch("http://localhost:3002/api/users");
       const users = await response.json();
       const user = users.find(
         (user) => user.email === email && user.password === password
