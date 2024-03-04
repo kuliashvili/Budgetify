@@ -2,7 +2,10 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import person from "../../assets/person.svg"
 
-function Header() {
+function Header({transactions}) {
+
+  const fullName = transactions.length > 0 ? transactions[0].fullName : '';
+
   return (
     <div className="Header">
       <div className="header-logo" >
@@ -27,7 +30,7 @@ function Header() {
       </ul>
       <div className="header-person" >
         <img className="person-icon" src={person}></img>
-        <p className="person-name" >Maksim Verenich</p>
+        <p className="person-name" >{fullName}</p>
       </div>
     </div>
   );

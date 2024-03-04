@@ -5,19 +5,17 @@ import close from "../../assets/close.svg";
 import up from "../../assets/up.svg";
 import whitedown from "../../assets/whitedown.svg";
 import image from "../../assets/image.svg";
+import { useState } from "react";
 
-function Information() {
-  function closeInfo() {
-    let info = document.getElementById("Information");
-    info.style.display = "none";
+function Information({ onClose }) {
+  const [isVisible, setIsVisible] = useState(true);
 
-    let overlay = document.querySelector(".overlay");
-    if (overlay) {
-      overlay.parentNode.removeChild(overlay);
-    }
-  }
+  const closeInfo = () => {
+    setIsVisible(false);
+    onClose(); // Call the onClose function passed as prop
+  };
 
-  return (
+  return isVisible ? (
     <div id="Information" className="Information">
       <div className="info-inner">
         <div className="info-header">
@@ -109,6 +107,8 @@ function Information() {
         close
       </button>
     </div>
+  ) : (
+    console.log("error can't show transaction Information")
   );
 }
 

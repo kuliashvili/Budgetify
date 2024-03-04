@@ -46,3 +46,7 @@
 .person-icon{
     margin-right: 5px;
 }
+.person-name{
+    min-width: 140px;
+    margin-left: 5px;
+}
