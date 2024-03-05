@@ -34,6 +34,8 @@ const usersSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
+  debitCardBalance: String,
+  creditCardBalance: String,
 });
 
 // Create a model for the transaction collection

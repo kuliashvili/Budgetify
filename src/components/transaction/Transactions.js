@@ -6,15 +6,15 @@ import { useState } from "react";
 
 function Transactions({ transactions }) {
   const [isInformationVisible, setIsInformationVisible] = useState(false);
+  const [transactionDataToShow, setTransactionDataToShow] = useState(null);
 
   const closeInformation = () => {
     setIsInformationVisible(false);
-    alert("hide");
   };
 
-  const showInfo = () => {
+  const showInfo = (transactionData) => {
     setIsInformationVisible(true);
-    alert("show");
+    setTransactionDataToShow(transactionData);
   };
 
   return (
@@ -23,7 +23,7 @@ function Transactions({ transactions }) {
         <div
           key={index}
           id="Transaction"
-          onClick={showInfo}
+          onClick={() => showInfo(transaction)}
           className="Transaction"
         >
           <div className="both-left">
@@ -57,7 +57,12 @@ function Transactions({ transactions }) {
           </div>
         </div>
       ))}
-      {isInformationVisible && <Information onClose={closeInformation} />}
+      {isInformationVisible && (
+        <Information
+          onClose={closeInformation}
+          transactionDataToShow={transactionDataToShow}
+        />
+      )}
     </div>
   );
 }
