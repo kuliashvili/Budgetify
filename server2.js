@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { useTransition } = require("react");
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -10,7 +11,7 @@ app.use(cors());
 // Connect to MongoDB Atlas
 mongoose
   .connect(
-    "mongodb+srv://giorgikuliashvili1:Giorga2002@cluster0.tgtyvvi.mongodb.net/budgetify",
+    `mongodb+srv://giorgikuliashvili1:${process.env.MONGODB_PASSWORD}@cluster0.tgtyvvi.mongodb.net/budgetify`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
