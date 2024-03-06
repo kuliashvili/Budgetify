@@ -10,13 +10,22 @@ function Transactions({ transactions }) {
 
   const closeInformation = () => {
     setIsInformationVisible(false);
+    const overlay = document.getElementById("overlay")
+    if (overlay) {
+      overlay.remove() 
+    }
+   
   };
-
   const showInfo = (transactionData) => {
     setIsInformationVisible(true);
     setTransactionDataToShow(transactionData);
-  };
 
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.id = "overlay";
+    document.body.appendChild(overlay);
+  };
+  
   return (
     <div className="Transactions">
       {transactions.map((transaction, index) => (
