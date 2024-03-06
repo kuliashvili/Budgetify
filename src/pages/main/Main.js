@@ -39,7 +39,11 @@ function Main() {
       <Header transactions={transactions}  />
       <div className="main-content">
         <div className="main-left">
-          <Cards />
+        <Cards 
+  debitCardBalance={transactions.length > 0 ? transactions[0].amount : ""}
+  creditCardBalance={transactions.length > 0 ? transactions[6].amount : ""}
+/>
+
         </div>
         <div className="main-center">
           <Search />

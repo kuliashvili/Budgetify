@@ -2,7 +2,8 @@ import "./Login.css";
 import eyeIcon from "../../assets/eye.png";
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import close from "../../assets/close.svg"
+import close from "../../assets/close.svg";
+import Cards from "../../components/cards/Cards";
 
 function Login() {
   let error = document.getElementById("error-field");
@@ -10,8 +11,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-  const [emailError, setEmailError] = useState(false)
-  const [passwordError, setPasswordError] = useState(false)
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleLogin = async () => {
     try {
@@ -23,24 +24,24 @@ function Login() {
 
       if (user) {
         setLoggedIn(true);
+
         // window.location.href = "/main";
       } else {
-        error.style.display = "flex"
+        error.style.display = "flex";
       }
     } catch (error) {
       console.error("Error fetching users:", error);
       alert("An error occurred while logging in");
-      
     }
   };
 
   const validateEmail = () => {
-    setEmailError( email == "")
-  }
+    setEmailError(email == "");
+  };
 
   const validatePassword = () => {
-    setPasswordError( password == "")
-  }
+    setPasswordError(password == "");
+  };
 
   function showPassword() {
     setCounter(counter + 1);
@@ -53,8 +54,8 @@ function Login() {
     }
   }
 
-  function hideError(){
-    error.style.display = "none"
+  function hideError() {
+    error.style.display = "none";
   }
 
   return (
@@ -68,10 +69,10 @@ function Login() {
               <h1 className="login-header">Budgetify</h1>
             </div>
             <div className="login-down">
-              <div id="error-field" className="error-field" >
-                <p className="error-field-text" >Incorrect email or password</p>
-                <button onClick={hideError} className="error-close" >
-                  <img className="error-close-img"  src={close} ></img>
+              <div id="error-field" className="error-field">
+                <p className="error-field-text">Incorrect email or password</p>
+                <button onClick={hideError} className="error-close">
+                  <img className="error-close-img" src={close}></img>
                 </button>
               </div>
               <div className="login-form">
@@ -84,7 +85,9 @@ function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   className={emailError ? "error" : ""}
                 ></input>
-                {emailError && <div className="error-message" >Email is required</div>}
+                {emailError && (
+                  <div className="error-message">Email is required</div>
+                )}
                 <div className="password-input-container">
                   <input
                     id="input-password"
@@ -101,10 +104,9 @@ function Login() {
                     <img className="eye-icon" src={eyeIcon} alt="eyeIcon"></img>
                   </button>
                 </div>
-                {passwordError && <div className="error-message" >Password is required</div>}
-
-
-                
+                {passwordError && (
+                  <div className="error-message">Password is required</div>
+                )}
 
                 <button
                   className="login-button"
