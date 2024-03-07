@@ -31,9 +31,17 @@
   border-radius: 8px;
   background-color: #eceded;
 }
+.txt1{
+  font-size: 18px;
+}
 .transaction-header {
   font-size: 20px;
   font-weight: 900px;
+  color: #373737;
+}
+.transaction-category {
+  font-size: 20px;
+  font-weight: bold;
   color: #373737;
 }
 .both-left {

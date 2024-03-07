@@ -49,7 +49,7 @@ function Subscriptions(){
                 console.log("Error fetching transactions: ", error)
             }
         }
-        console.log("Fetching subscriptions...");
+        // console.log("Fetching subscriptions...");
         fetchSubscriptions();
 
     }, [] )

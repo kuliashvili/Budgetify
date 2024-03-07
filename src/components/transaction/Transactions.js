@@ -28,9 +28,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
   };
 
 
-  useEffect(() => {
-    console.log("Subscriptions data received:", subscriptions);
-  }, [subscriptions]);
+  
   
   return (
     <div className="Transactions">
@@ -41,28 +39,24 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
       <div
         key={index}
         id="Subscription"
-        className="Subscription"
+        className="Transaction"
       >
         <div className="both-left">
           <div className="transaction-left">
-            <p className="transaction-header">{subscription.category}</p>
+            <p className="transaction-category">{subscription.category}</p>
           </div>
           <div className="transaction-center">
             <p className="transaction-header">{subscription.header}</p>
             <div className="transaction-description">
               <p className="transaction-description-text">
-                <p className="txt">{subscription.nextPaymentDate}</p>
+                <p className="txt1">Next payment date: <b>{subscription.nextPaymentDate}</b></p>
               </p>
             </div>
           </div>
         </div>
         <div className="transaction-right">
           <p
-            className={
-              subscription.isExpense
-                ? "transaction-output"
-                : "transaction-output1"
-            }
+            className="transaction-output"
           >
             {subscription.actualPrice}$
           </p>
@@ -83,7 +77,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
         >
           <div className="both-left">
             <div className="transaction-left">
-              <p className="transaction-header">{transaction.kind}</p>
+              <p className="transaction-category">{transaction.kind}</p>
             </div>
             <div className="transaction-center">
               <p className="transaction-header">{transaction.header}</p>
