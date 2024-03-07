@@ -5,7 +5,6 @@ import Transactions from "../../components/transaction/Transactions";
 import Search from "../../components/search/Search";
 import Ubuttons from "../../components/ubuttons/Ubuttons";
 import Dbuttons from "../../components/dbuttons/Dbuttons";
-import Information from "../../components/information/Information";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -50,7 +49,7 @@ function Main() {
           <Transactions transactions={transactions} />
         </div>
         <div className="main-right">
-            <Ubuttons/>
+            <Ubuttons showAddButtons={true} />
             <Dbuttons/>
         </div>
       </div>
