@@ -39,6 +39,14 @@ const usersSchema = new mongoose.Schema({
   creditCardBalance: String,
 });
 
+// Define a schema for subscriptions
+const subscriptionsSchema = new mongoose.Schema({
+  category: String,
+  header: String,
+  nextPaymentDate: String,
+  actualPrice: String,
+});
+
 // Create a model for the transaction collection
 const Transaction = mongoose.model(
   "Transaction",
@@ -48,6 +56,9 @@ const Transaction = mongoose.model(
 
 // Create a model for the users collection
 const Users = mongoose.model("Users", usersSchema, "users");
+
+// Create a model for the subscriptions collection
+const Subscriptions = mongoose.model("Subscriptions", usersSchema, "subscriptions");
 
 // Define a route to fetch all transactions
 app.get("/api/transactions", async (req, res) => {
@@ -72,6 +83,19 @@ app.get("/api/users", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+
+// Define a route to fetch all subscriptions
+app.get("/api/subscriptions", async (req, res) => {
+  try {
+    const subscriptions = await Subscriptions.find();
+    console.log("Retrived Subscriptions:", Subscriptions);
+    res.json(subscriptions);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
 
 // Start the server
 app.listen(PORT, () => {

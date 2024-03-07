@@ -3,8 +3,9 @@ import up from "../../assets/up.svg";
 import down from "../../assets/down.svg";
 import Information from "../information/Information";
 import { useState } from "react";
+import { useEffect } from "react";
 
-function Transactions({ transactions }) {
+function Transactions({ transactions,subscriptions, showSubscriptions}) {
   const [isInformationVisible, setIsInformationVisible] = useState(false);
   const [transactionDataToShow, setTransactionDataToShow] = useState(null);
 
@@ -25,10 +26,55 @@ function Transactions({ transactions }) {
     overlay.id = "overlay";
     document.body.appendChild(overlay);
   };
+
+
+  useEffect(() => {
+    console.log("Subscriptions data received:", subscriptions);
+  }, [subscriptions]);
   
   return (
     <div className="Transactions">
-      {transactions.map((transaction, index) => (
+
+{showSubscriptions && subscriptions.length > 0 && (
+  <>
+    {subscriptions.map((subscription, index) => (
+      <div
+        key={index}
+        id="Subscription"
+        className="Subscription"
+      >
+        <div className="both-left">
+          <div className="transaction-left">
+            <p className="transaction-header">{subscription.category}</p>
+          </div>
+          <div className="transaction-center">
+            <p className="transaction-header">{subscription.header}</p>
+            <div className="transaction-description">
+              <p className="transaction-description-text">
+                <p className="txt">{subscription.nextPaymentDate}</p>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="transaction-right">
+          <p
+            className={
+              subscription.isExpense
+                ? "transaction-output"
+                : "transaction-output1"
+            }
+          >
+            {subscription.actualPrice}$
+          </p>
+        </div>
+      </div>
+    ))}
+  </>
+)}
+
+
+
+      {transactions && transactions.map((transaction, index) => (
         <div
           key={index}
           id="Transaction"
@@ -66,6 +112,11 @@ function Transactions({ transactions }) {
           </div>
         </div>
       ))}
+
+
+
+
+
       {isInformationVisible && (
         <Information
           onClose={closeInformation}

@@ -10,8 +10,10 @@ import { useEffect } from "react";
 
 function Subscriptions(){
 
-
     const [transactions, setTransactions] = useState([]);
+    const [subscriptions, setSubscriptions] = useState([])
+    const [showSubscriptions, setShowSubscriptions] = useState(true)
+    
 
     useEffect(() => {
       const fetchTransactions = async () => {
@@ -31,6 +33,30 @@ function Subscriptions(){
       fetchTransactions();
     }, []);
 
+    useEffect( () => {
+        const fetchSubscriptions = async () => {
+
+            try{
+                const response = await fetch("http://localhost:3002/api/subscriptions");
+                if(response.ok){
+                    const data = await response.json()
+                    setSubscriptions(data)
+                }else{
+                    console.error("Failed to fetch subscriptions")
+                }
+
+            } catch (error){
+                console.log("Error fetching transactions: ", error)
+            }
+        }
+        console.log("Fetching subscriptions...");
+        fetchSubscriptions();
+
+    }, [] )
+
+
+
+
 
 
     return (
@@ -46,7 +72,7 @@ function Subscriptions(){
         </div>
         <div className="main-center">
           <Search />
-          <Transactions transactions={transactions} />
+          <Transactions showSubscriptions={showSubscriptions} subscriptions={subscriptions} />
         </div>
         <div className="main-right">
             <Ubuttons ubuttonsText={"Add Subscription"} ubuttonsText1={"Add Transaction"} />
