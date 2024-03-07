@@ -8,6 +8,7 @@ import { useEffect } from "react";
 function Transactions({ transactions,subscriptions, showSubscriptions}) {
   const [isInformationVisible, setIsInformationVisible] = useState(false);
   const [transactionDataToShow, setTransactionDataToShow] = useState(null);
+  const [subscriptionDataToShow, setsubscriptionDataToShow] = useState(null);
 
   const closeInformation = () => {
     setIsInformationVisible(false);
@@ -27,6 +28,17 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
     document.body.appendChild(overlay);
   };
 
+  const showInfo1 = (subscriptionData) => {
+    setIsInformationVisible(true);
+    setsubscriptionDataToShow(subscriptionData);
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.id = "overlay";
+    document.body.appendChild(overlay);
+  };
+
+
 
   
   
@@ -39,6 +51,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
       <div
         key={index}
         id="Subscription"
+        onClick={() => showInfo1(subscription)}
         className="Transaction"
       >
         <div className="both-left">
@@ -115,6 +128,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
         <Information
           onClose={closeInformation}
           transactionDataToShow={transactionDataToShow}
+          subscriptionDataToShow={subscriptionDataToShow}
         />
       )}
     </div>
