@@ -7,7 +7,7 @@ import whitedown from "../../assets/whitedown.svg";
 import image from "../../assets/image.svg";
 import { useState } from "react";
 
-function Information({ onClose, transactionDataToShow, subscriptionDataToShow }) {
+function Information({ onClose, transactionDataToShow, subscriptionDataToShow, obligatoryDataToShow }) {
   const [isVisible, setIsVisible] = useState(true);
 
   const closeInfo = () => {
@@ -124,8 +124,7 @@ function Information({ onClose, transactionDataToShow, subscriptionDataToShow })
 
    
   
-    {isVisible && subscriptionDataToShow ? 
-    (<div id="Information" className="Information">
+    {isVisible && !obligatoryDataToShow && subscriptionDataToShow ?  (<div id="Information" className="Information">
       <div className="info-inner">
         <div className="info-header">
           <p className="info-text">Subscription Information</p>
@@ -182,6 +181,63 @@ function Information({ onClose, transactionDataToShow, subscriptionDataToShow })
       </div>
       <button className="info-close" onClick={closeInfo}>
         Close</button></div>) : <h1>sthwrong</h1>}
+  
+    {isVisible && obligatoryDataToShow ?  (<div id="Information" className="Information">
+      <div className="info-inner">
+        <div className="info-header">
+          <p className="info-text">Obligatory Information</p>
+          <div className="info-buttons">
+            <button className="pen info-button">
+              <img className="pen-img info-img" src={pen} alt="Pen" />
+            </button>
+            <button className="trash info-button">
+              <img className="trash-img info-img" src={trash} alt="Trash" />
+            </button>
+            <button onClick={closeInfo} className="close info-button">
+              <img className="close-img info-img" src={close} alt="Close" />
+            </button>
+          </div>
+        </div>
+
+        <div className="info-expenses">
+          <div className="expenses-top">
+            <div className="top-left">
+              <p className="expenses-text1">{obligatoryDataToShow.header}</p>
+            </div>
+            <div className="expenses-money">
+              {obligatoryDataToShow.amount}$
+            </div>
+          </div>
+          <div className="expenses-bottom">
+            {/* <div className="bottom-up">{transactionDataToShow.header}</div> */}
+            <div className="bottom-down">
+              {/* <button className="expenses-button">{subscriptionDataToShow.category}</button> */}
+            </div>
+          </div>
+        </div>
+
+        <div className="info-details">
+          <div className="info-field">
+            <p className="field-left">Payment Date:</p>
+            <div className="field-right">
+              <p className="field-right-text">{obligatoryDataToShow.paymentDate}</p>
+            </div>
+          </div>
+          <div className="line"></div>
+        
+          <div className="info-field">
+            <p className="field-left">Description:</p>
+            <div className="field-right">
+              <p className="field-right-text">{obligatoryDataToShow.description}</p>
+            </div>
+          </div>
+        </div>
+
+       
+      
+      </div>
+      <button className="info-close" onClick={closeInfo}>
+        Close</button></div>) : <h1>zd</h1>}
 
 
 

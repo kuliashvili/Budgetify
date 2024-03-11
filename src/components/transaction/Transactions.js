@@ -5,10 +5,11 @@ import Information from "../information/Information";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function Transactions({ transactions,subscriptions, showSubscriptions}) {
+function Transactions({ transactions,subscriptions, showSubscriptions, obligatorys, showObligatorys}) {
   const [isInformationVisible, setIsInformationVisible] = useState(false);
   const [transactionDataToShow, setTransactionDataToShow] = useState(null);
   const [subscriptionDataToShow, setsubscriptionDataToShow] = useState(null);
+  const [obligatoryDataToShow, setObligatoryDataToShow] = useState(null);
 
   const closeInformation = () => {
     setIsInformationVisible(false);
@@ -37,6 +38,16 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
     overlay.id = "overlay";
     document.body.appendChild(overlay);
   };
+  
+  const showInfo2 = (obligatoryData) => {
+    setIsInformationVisible(true);
+    setObligatoryDataToShow(obligatoryData);
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.id = "overlay";
+    document.body.appendChild(overlay);
+  };
 
 
 
@@ -45,7 +56,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
   return (
     <div className="Transactions">
 
-{showSubscriptions && subscriptions.length > 0 && (
+      {showSubscriptions  &&  !showObligatorys && subscriptions.length > 0 && (
   <>
     {subscriptions.map((subscription, index) => (
       <div
@@ -77,8 +88,40 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
       </div>
     ))}
   </>
-)}
+      )}
 
+
+
+      {showObligatorys  && obligatorys.map((obligatory, index) => (
+        <div
+          key={index}
+          id="Transaction"
+          onClick={() => showInfo2(obligatory)}
+          className="Transaction"
+        >
+          <div className="both-left">
+            <div className="transaction-center">
+              <p className="transaction-header">{obligatory.header}</p>
+              <div className="transaction-description">
+                {/* <img src={obligatory.isExpense ? up : down} alt="icon" /> */}
+                <p className="transaction-description-text">
+                  <p className="txt1"> Payment Date:  
+                  <b style={{ marginLeft: '10px' }}>{obligatory.paymentDate}</b>
+                  </p>
+                 <p className="txt"></p>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="transaction-right">
+            <p
+              className="transaction-output"
+            >
+              {obligatory.amount}$
+            </p>
+          </div>
+        </div>
+      ))}
 
 
       {transactions && transactions.map((transaction, index) => (
@@ -121,6 +164,9 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
       ))}
 
 
+     
+
+
 
 
 
@@ -129,6 +175,7 @@ function Transactions({ transactions,subscriptions, showSubscriptions}) {
           onClose={closeInformation}
           transactionDataToShow={transactionDataToShow}
           subscriptionDataToShow={subscriptionDataToShow}
+          obligatoryDataToShow={obligatoryDataToShow}
         />
       )}
     </div>

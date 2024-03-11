@@ -30,6 +30,14 @@ const transactionSchema = new mongoose.Schema({
   amount: Number,
 });
 
+// Define a schema for the obligatory collection
+const obligatorySchema = new mongoose.Schema({
+  header: String,
+  paymentDate: String,
+  description: String,
+  amount: Number,
+});
+
 // Define a schema for users
 const usersSchema = new mongoose.Schema({
   name: String,
@@ -57,6 +65,9 @@ const Transaction = mongoose.model(
 // Create a model for the users collection
 const Users = mongoose.model("Users", usersSchema, "users");
 
+// Create a model for the obligatory collection
+const Obligatorys = mongoose.model("Obligatorys", usersSchema, "obligatorys");
+
 // Create a model for the subscriptions collection
 const Subscriptions = mongoose.model("Subscriptions", usersSchema, "subscriptions");
 
@@ -66,6 +77,18 @@ app.get("/api/transactions", async (req, res) => {
     const transactions = await Transaction.find();
     console.log("Retrieved transactions:", transactions); // Log retrieved transactions
     res.json(transactions);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+// Define a route to fetch all obligatorys
+app.get("/api/obligatorys", async (req, res) => {
+  try {
+    const obligatorys = await Obligatorys.find();
+    console.log("Retrieved obligatorys:", obligatorys); // Log retrieved obligatorys
+    res.json(obligatorys);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
