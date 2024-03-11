@@ -145,18 +145,17 @@ function Information({ onClose, transactionDataToShow, subscriptionDataToShow })
         <div className="info-expenses">
           <div className="expenses-top">
             <div className="top-left">
-              <img src={up} alt="Up" />ss
-              {/* <p className="expenses-text">{subscriptionDataToShow.header}</p> */}
+              <img src={up} alt="Up" />
+              <p className="expenses-text1">{subscriptionDataToShow.header}</p>
             </div>
             <div className="expenses-money">
-              {/* {transactionDataToShow.amount}$ */}
+              {subscriptionDataToShow.actualPrice}$
             </div>
           </div>
           <div className="expenses-bottom">
             {/* <div className="bottom-up">{transactionDataToShow.header}</div> */}
             <div className="bottom-down">
-              <button className="expenses-button">Home</button>
-              <button className="expenses-button">Rent</button>
+              <button className="expenses-button">{subscriptionDataToShow.category}</button>
             </div>
           </div>
         </div>
@@ -165,63 +164,21 @@ function Information({ onClose, transactionDataToShow, subscriptionDataToShow })
           <div className="info-field">
             <p className="field-left">Payment Date:</p>
             <div className="field-right">
-              {/* <p className="field-right-text">{transactionDataToShow.date}</p> */}
+              <p className="field-right-text">{subscriptionDataToShow.nextPaymentDate}</p>
             </div>
           </div>
           <div className="line"></div>
-          <div className="info-field">
-            <p className="field-left">Payee:</p>
-            <div className="field-right">
-              <p className="field-right-text">
-                {/* {transactionDataToShow.fullName} */}
-              </p>
-            </div>
-          </div>
-          <div className="line"></div>
+        
           <div className="info-field">
             <p className="field-left">Description:</p>
             <div className="field-right">
-              {/* <p className="field-right-text">{transactionDataToShow.header}</p> */}
+              <p className="field-right-text">{subscriptionDataToShow.category}</p>
             </div>
           </div>
         </div>
 
-        <div className="info-images">
-          <div className="images-field">
-            <div className="images-left">
-              <img className="images-img" src={image} alt="Receipt" />
-              <p className="images-text">Receipt for March flat rent</p>
-            </div>
-            <div className="images-right">
-              <button className="images-button">
-                <img
-                  className="images-utton-img"
-                  src={whitedown}
-                  alt="Download"
-                />
-                Download
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="info-images">
-          <div className="images-field">
-            <div className="images-left">
-              <img className="images-img" src={image} alt="Receipt" />
-              <p className="images-text">Receipt for March flat rent</p>
-            </div>
-            <div className="images-right">
-              <button className="images-button">
-                <img
-                  className="images-utton-img"
-                  src={whitedown}
-                  alt="Download"
-                />
-                Download
-              </button>
-            </div>
-          </div>
-        </div>
+       
+      
       </div>
       <button className="info-close" onClick={closeInfo}>
         Close</button></div>) : <h1>sthwrong</h1>}

@@ -74,6 +74,12 @@
 .expenses-text {
   margin-left: 10px;
   font-family: "Space Grotesk", sans-serif;
+  
+}
+.expenses-text1 {
+  margin-left: 10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
 }
 .expenses-money {
   color: red;
