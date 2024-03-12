@@ -72,16 +72,14 @@ function Transactions({ transactions,subscriptions, showSubscriptions, obligator
           <div className="transaction-center">
             <p className="transaction-header">{subscription.header}</p>
             <div className="transaction-description">
-              <p className="transaction-description-text">
+              <div className="transaction-description-text">
                 <p className="txt1">Next payment date: <b>{subscription.nextPaymentDate}</b></p>
-              </p>
+              </div>
             </div>
           </div>
         </div>
         <div className="transaction-right">
-          <p
-            className="transaction-output"
-          >
+          <p className="transaction-output">
             {subscription.actualPrice}$
           </p>
         </div>

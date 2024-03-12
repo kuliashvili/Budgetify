@@ -66,10 +66,10 @@ const Transaction = mongoose.model(
 const Users = mongoose.model("Users", usersSchema, "users");
 
 // Create a model for the obligatory collection
-const Obligatorys = mongoose.model("Obligatorys", usersSchema, "obligatorys");
+const Obligatorys = mongoose.model("Obligatorys", obligatorySchema, "obligatorys");
 
 // Create a model for the subscriptions collection
-const Subscriptions = mongoose.model("Subscriptions", usersSchema, "subscriptions");
+const Subscriptions = mongoose.model("Subscriptions", subscriptionsSchema, "subscriptions");
 
 // Define a route to fetch all transactions
 app.get("/api/transactions", async (req, res) => {
