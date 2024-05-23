@@ -1,4 +1,4 @@
-# Budgetify
+# Budgetify,    https://giorgi.kuliashvili.com/
 
 Budgetify is a React project developed as part of the Exadel React course. It aims to provide users with a simple and intuitive way to manage their budgets. This README serves as a guide to understand the project structure, installation process, and how to contribute.
 
